@@ -2,15 +2,10 @@ import { Request, Response } from 'express';
 
 class CreteUserController {
     handler(request: Request, response: Response) {
-        return response.json([
-            {
-                name: 'Alberto Parente',
-            },
-            {
-                name: 'Juliana Cavalcante',
-            }
-        ])
+        const name = request.body.name;
+        const email = request.body.email;
 
+        return response.json({ message: `User: ${name} and E-mail${email}` })
     }
 }
 
