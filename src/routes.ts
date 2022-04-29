@@ -8,6 +8,6 @@ router.get('/', (request: Request, response: Response) => {
     return response.json({ message: 'Test...' })
 });
 
-router.post('/user', creteUserController.handler);
+router.post('/user', creteUserController.handle);
 
 export { router }
