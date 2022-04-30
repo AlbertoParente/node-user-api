@@ -1,15 +1,21 @@
 import { Request, Response } from 'express';
+import { CreateUserService } from '../services/CreateUserService'
 
-class CreteUserController {
+class CreateUserController {
     handle(request: Request, response: Response) {
+
+        const createUserService = new CreateUserService();
         const name = request.body.name;
         const email = request.body.email;
 
-        if(name.legth === 0) {
-            return response.status(200).json({message: `User: ${name} and E-mail${email}`});
+        if (name.length === 0 || email.length === 0) {
+            return response.status(400).json({ message: 'Inform all fields!' });
         }
-        return response.status(400).json({message: `User: ${name} and E-mail${email}`});
+
+        const user = createUserService.execute({ name, email });
+
+        return response.status(200).json({ user });
     }
 }
 
-export { CreteUserController }
+export { CreateUserController }

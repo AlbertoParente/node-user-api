@@ -1,13 +1,13 @@
 import { Router, Request, Response } from 'express';
-import { CreteUserController } from './controllers/CreateUserControlle';
+import { CreateUserController } from './controllers/CreateUserControlle';
 
 const router = Router();
-const creteUserController = new CreteUserController();
+const createUserController = new CreateUserController();
 
 router.get('/', (request: Request, response: Response) => {
     return response.json({ message: 'Test...' })
 });
 
-router.post('/user', creteUserController.handle);
+router.post('/user', createUserController.handle);
 
 export { router }
