@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import { CreateUserService } from '../services/CreateUserService'
+import { CreateUsersService } from '../services/CreateUsersService'
 
-class CreateUserController {
+class CreateUsersController {
     handle(request: Request, response: Response) {
 
-        const createUserService = new CreateUserService();
+        const createUserService = new CreateUsersService();
         const name = request.body.name;
         const email = request.body.email;
 
@@ -18,4 +18,4 @@ class CreateUserController {
     }
 }
 
-export { CreateUserController }
+export { CreateUsersController }

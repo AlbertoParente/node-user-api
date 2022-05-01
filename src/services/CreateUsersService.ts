@@ -4,7 +4,7 @@ interface IdUser {
     email: string
 };
 
-class CreateUserService {
+class CreateUsersService {
     execute({ name, email }: IdUser) {
         const data = [];
 
@@ -14,4 +14,4 @@ class CreateUserService {
     };
 };
 
-export { CreateUserService };
+export { CreateUsersService };
