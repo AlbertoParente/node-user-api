@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { CreateUsersService } from '../services/CreateUsersService'
-import { v4 as uuid} from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 class CreateUsersController {
     async handle(request: Request, response: Response) {
@@ -16,7 +16,7 @@ class CreateUsersController {
 
         const user = await createUserService.execute({ id, name, email });
 
-        return response.status(201).json({ user });
+        return response.status(201).json(user);
     }
 }
 
