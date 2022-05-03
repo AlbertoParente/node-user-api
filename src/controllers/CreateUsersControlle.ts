@@ -11,7 +11,7 @@ class CreateUsersController {
         const id = uuid();
 
         if (name.length === 0) {
-            return response.status(400).json({ message: 'Inform all fields!' });
+            return response.status(400).json({ message: 'Name is required!' });
         }
 
         const user = await createUserService.execute({ id, name, email });
