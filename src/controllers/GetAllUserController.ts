@@ -1,0 +1,5 @@
+class GetAllUserController {
+
+};
+
+export { GetAllUserController };
