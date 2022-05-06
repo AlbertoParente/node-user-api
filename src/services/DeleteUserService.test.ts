@@ -16,10 +16,10 @@ describe('DeleteUserService', () => {
 
     const fakeData = new FakeData();
 
-    it('should return a empity array when the user is deleted!', () => {
-        const mockeUser = await fakeData();
+    it('should return a empity array when the user is deleted!', async () => {
+        const mockeUser = await fakeData.createUser();
         const deleteUserService = new DeleteUserService();
-        const result = await deleteUserService.execute({ id });
+        const result = await deleteUserService.execute({ id: mockeUser.id });
 
         expect(result).toHaveLength(0);
     });
