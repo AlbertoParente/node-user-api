@@ -19,11 +19,13 @@ class FakeData {
     };
 
     async createUser() {
-        await this.createUserService.execute({
+        const user = await this.createUserService.execute({
             id: uuid(),
             name: 'Alberto Parente',
             email: 'albertoparentefh@gmail.com'
         });
+
+        return user;
     }
 };
 
