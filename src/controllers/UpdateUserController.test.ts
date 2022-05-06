@@ -1,5 +1,5 @@
 import { UpdateUserController } from './UpdateUserController';
-import { request, Request } from 'express';
+import { Request } from 'express';
 import { makeMockResponse } from '../utils/mocks/mockResponse';
 import { FakeData } from '../utils/FakeData';
 import createConnection from '../database';

@@ -6,13 +6,13 @@ class UpdateUserController {
         const updateUserService = new UpdateUserService();
         const { id, name, email } = request.body;
 
-        if (id.length === 0) return response.status(400).json({ mensagem: 'Id not informed!' });
+        if (id.length === 0) return response.status(400).json({ message: 'Id not informed!' });
 
-        if (name.length === 0) return response.status(400).json({ mensagem: 'Name not informed!' });
+        if (name.length === 0) return response.status(400).json({ message: 'Name not informed!' });
 
         await updateUserService.execute({ id, name, email })
 
-        return response.status(204);
+        return response.status(204).json();
     };
 };
 
