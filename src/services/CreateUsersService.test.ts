@@ -20,16 +20,14 @@ describe('CreateUserController', () => {
 
         const result = await createUsersService.execute({
             id: uuid(),
-            name: 'Alberto Parente',
+            name: 'Alberto',
+            surname: 'Parente',
+            contractedCovid: true,
             email: 'albertoparentefh@gmail.com'
         });
 
         console.log(result);
 
         expect(result).toHaveProperty('id');
-    });
-
-    it('', () => {
-
     });
 });

@@ -3,11 +3,13 @@ import { User } from '../entities/User';
 interface IdUser {
     id: string,
     name: string,
+    surname: string,
+    contractedCovid: boolean,
     email?: string
 };
 
 class CreateUsersService {
-    async execute({ id, name, email }: IdUser) {
+    async execute({ id, name, surname, contractedCovid, email }: IdUser) {
         const user = await getRepository(User)
             .createQueryBuilder("user")
             .insert()
@@ -16,6 +18,8 @@ class CreateUsersService {
                 {
                     id: id,
                     name: name,
+                    surname: surname,
+                    contractedCovid: contractedCovid,
                     email: email
                 }
             ])
