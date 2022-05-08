@@ -23,6 +23,8 @@ describe('CreateUserController', () => {
         const request = {
             body: {
                 name: 'test user',
+                surname: 'Parente',
+                contractedCovid: true,
                 email: 'email@teste.com'
             }
         } as Request;
@@ -36,6 +38,38 @@ describe('CreateUserController', () => {
         const request = {
             body: {
                 name: '',
+                surname: 'Teste surname',
+                contractedCovid: true,
+                email: 'email@teste.com'
+            }
+        } as Request;
+
+        await createUserController.handle(request, response);
+
+        expect(response.state.status).toBe(400);
+    });
+
+    it('should return status 400 when the surname is not informed!', async () => {
+        const request = {
+            body: {
+                name: 'Test name',
+                surname: '',
+                contractedCovid: true,
+                email: 'email@teste.com'
+            }
+        } as Request;
+
+        await createUserController.handle(request, response);
+
+        expect(response.state.status).toBe(400);
+    });
+
+    it('should return status 400 when the contractedCovid is not informed!', async () => {
+        const request = {
+            body: {
+                name: 'Test name',
+                surname: 'Test surname',
+                contractedCovid: '',
                 email: 'email@teste.com'
             }
         } as Request;
@@ -48,7 +82,9 @@ describe('CreateUserController', () => {
     it('should return status 201, when email not informed!', async () => {
         const request = {
             body: {
-                name: 'test user',
+                name: 'test name',
+                surname: 'test surname',
+                contractedCovid: true,
                 email: ''
             }
         } as Request;
