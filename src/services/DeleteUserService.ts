@@ -6,6 +6,8 @@ interface IUser {
 };
 
 class DeleteUserService {
+
+    /* Methodo de deleção de usuario por id */
     async execute({ id }: IUser) {
         const user = await getRepository(User)
             .createQueryBuilder()
