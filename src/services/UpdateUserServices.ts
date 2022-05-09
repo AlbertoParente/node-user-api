@@ -9,6 +9,8 @@ interface IUser {
     email?: string;
 };
 class UpdateUserService {
+
+    /* Methodo de edição de usuario por nome, sobrenome, se contraiu covid, e por email */
     async execute({ id, name, surname, contractedCovid, email }: IUser) {
         const user = await getRepository(User)
             .createQueryBuilder("user")

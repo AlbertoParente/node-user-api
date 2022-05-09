@@ -30,6 +30,8 @@ interface IUserEmail {
 };
 
 class GetUserService {
+
+    /* Methodo de busca de usuario por id */
     async executeSearchId({ id }: IUserId) {
         const user = await getRepository(User)
             .createQueryBuilder()
@@ -41,6 +43,7 @@ class GetUserService {
         return user;
     };
 
+    /* Methodo de busca de usuario por nome */
     async executeSearchName({ name }: IUserName) {
         const user = await getRepository(User)
             .createQueryBuilder()
@@ -52,6 +55,7 @@ class GetUserService {
         return user;
     };
 
+    /* Methodo de busca de usuario por sobrenome */
     async executeSearchSurname({ surname }: IUserSurname) {
         const user = await getRepository(User)
             .createQueryBuilder()
@@ -63,6 +67,7 @@ class GetUserService {
         return user;
     };
 
+    /* Methodo de busca se usuario contraiu covid */
     async executeSearchContractedCovid({ contractedCovid }: IUserContractedCovid) {
         const user = await getRepository(User)
             .createQueryBuilder()
@@ -74,6 +79,7 @@ class GetUserService {
         return user;
     };
 
+    /* Methodo de busca de usuario por email */
     async executeSearchEmail({ email }: IUserEmail) {
         const user = await getRepository(User)
             .createQueryBuilder()
