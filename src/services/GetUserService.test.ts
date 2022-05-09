@@ -56,7 +56,7 @@ describe('GetAllUserService', () => {
 
     it('should return the user by contractedCovid!', async () => {
         const getUserService = new GetUserService();
-        const result = await getUserService.executeSearchContractCovid(
+        const result = await getUserService.executeSearchContractedCovid(
             {
                 contractedCovid: 'true'
             }

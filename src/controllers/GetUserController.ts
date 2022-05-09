@@ -8,7 +8,7 @@ class GetUserController {
         await getUserService.executeSearchId({ id});
         await getUserService.executeSearchName({ name });
         await getUserService.executeSearchSurname({ surname });
-        await getUserService.executeSearchContractCovid({ contractedCovid });
+        await getUserService.executeSearchContractedCovid({ contractedCovid });
         await getUserService.executeSearchEmail({ email });
         return response.status(200).json();
     };

@@ -63,7 +63,7 @@ class GetUserService {
         return user;
     };
 
-    async executeSearchContractCovid({ contractedCovid }: IUserContractedCovid) {
+    async executeSearchContractedCovid({ contractedCovid }: IUserContractedCovid) {
         const user = await getRepository(User)
             .createQueryBuilder()
             .select()
