@@ -4,7 +4,7 @@ interface IdUser {
     id: string,
     name: string,
     surname: string,
-    contractedCovid: boolean,
+    contractedCovid: string,
     email?: string
 };
 

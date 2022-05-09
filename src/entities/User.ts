@@ -12,7 +12,7 @@ class User {
     surname: string;
 
     @Column()
-    contractedCovid: boolean;
+    contractedCovid: string;
 
     @Column()
     email: string;

@@ -23,12 +23,22 @@ describe('GetAllUserService', () => {
 
         const expectedResponse = [
             {
-                name: 'Alberto Parente',
+                name: 'Alberto',
+                surname: 'Parente',
+                contractedCovid: "true",
                 email: 'albertoparentefh@gmail.com'
             },
             {
-                name: 'Juliana Cavalcante',
+                name: 'Juliana',
+                surname: 'Parente',
+                contractedCovid: "true",
                 email: 'julianacavalcante2014@gmail.com'
+            },
+            {
+                name: 'Julia',
+                surname: 'Parente',
+                contractedCovid: "false",
+                email: 'juliaparente@gmail.com'
             }
         ]
 

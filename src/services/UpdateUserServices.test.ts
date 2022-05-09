@@ -23,9 +23,11 @@ describe('UpdateUserService', () => {
 
         const result = await updateUserService.execute({
             id: mockeUser.id,
-            name: 'Pedro'
+            name: 'Pedro',
+            surname: 'Parente',
+            contractedCovid: "false"
         });
 
         expect(result).toHaveLength(0);
-    })
+    });
 });

@@ -5,7 +5,7 @@ interface IUser {
     id: string;
     name: string;
     surname: string;
-    contractedCovid: boolean;
+    contractedCovid: string;
     email?: string;
 };
 class UpdateUserService {

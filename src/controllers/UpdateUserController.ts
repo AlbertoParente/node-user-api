@@ -12,7 +12,7 @@ class UpdateUserController {
 
         if (name.length === 0) return response.status(400).json({ message: 'surname not informed!' });
 
-        await updateUserService.execute({ id, name, surname, contractedCovid, email })
+        await updateUserService.execute({ id, name, surname, contractedCovid, email });
 
         return response.status(204).json();
     };

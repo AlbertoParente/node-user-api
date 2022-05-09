@@ -25,7 +25,7 @@ export class CreateUser1651456134762 implements MigrationInterface {
                     },
                     {
                         name: 'contractedCovid',
-                        type: 'bit',
+                        type: 'string',
                         isNullable: false
                     },
                     {

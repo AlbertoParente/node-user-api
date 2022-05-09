@@ -1,9 +1,9 @@
-import { UpdateUserController } from './UpdateUserController';
 import { Request } from 'express';
 import { makeMockResponse } from '../utils/mocks/mockResponse';
 import { FakeData } from '../utils/FakeData';
 import createConnection from '../database';
 import { getConnection } from 'typeorm';
+import { GetUserController } from './GetUserController';
 
 describe('UpdateUserController', () => {
     beforeAll(async () => {
@@ -19,23 +19,20 @@ describe('UpdateUserController', () => {
 
     const fakeData = new FakeData();
 
-    it('should return status 204 when to edit user!', async () => {
-        const mocUser = await fakeData.createUser();
-        const updateUserController = new UpdateUserController();
+    it('should return status 200 when to Search for user!', async () => {
+
+        await fakeData.createUser();
+
+        const getUserController = new GetUserController();
         const request = {
             body: {
-                id: mocUser.id,
                 name: 'Julia',
-                surname: 'Parente',
-                contractedCovid: 'false',
-                email: 'juliaparente@gmail.com'
             }
         } as Request;
-
         const response = makeMockResponse();
 
-        await updateUserController.handle(request, response);
+        await getUserController.handle(request, response);
 
-        expect(response.state.status).toBe(204);
+        expect(response.state.status).toBe(200);
     });
 });

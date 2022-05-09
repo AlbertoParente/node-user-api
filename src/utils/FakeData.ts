@@ -7,21 +7,35 @@ class FakeData {
     async execute() {
         await this.createUserService.execute({
             id: uuid(),
-            name: 'Alberto Parente',
+            name: 'Alberto',
+            surname: 'Parente',
+            contractedCovid: "true",
             email: 'albertoparentefh@gmail.com'
         });
 
         await this.createUserService.execute({
             id: uuid(),
-            name: 'Juliana Cavalcante',
+            name: 'Juliana',
+            surname: 'Parente',
+            contractedCovid: "true",
             email: 'julianacavalcante2014@gmail.com'
+        });
+
+        await this.createUserService.execute({
+            id: uuid(),
+            name: 'Julia',
+            surname: 'Parente',
+            contractedCovid: "false",
+            email: 'juliaparente@gmail.com'
         });
     };
 
     async createUser() {
         const user = await this.createUserService.execute({
             id: uuid(),
-            name: 'Alberto Parente',
+            name: 'Alberto',
+            surname: 'Parente',
+            contractedCovid: "true",
             email: 'albertoparentefh@gmail.com'
         });
 

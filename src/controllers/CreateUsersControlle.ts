@@ -13,6 +13,8 @@ class CreateUsersController {
         const id = uuid();
 
         if (name.length === 0) return response.status(400).json({ message: 'Name is required!' });
+        if (surname.length === 0) return response.status(400).json({ message: 'Surname is required!' });
+        if (contractedCovid.length === 0) return response.status(400).json({ message: 'ContractedCovid is required!' });
 
         const user = await createUserService.execute({ id, name, surname, contractedCovid, email });
 

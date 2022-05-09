@@ -22,7 +22,7 @@ describe('CreateUserController', () => {
             id: uuid(),
             name: 'Alberto',
             surname: 'Parente',
-            contractedCovid: true,
+            contractedCovid: "true",
             email: 'albertoparentefh@gmail.com'
         });
 
