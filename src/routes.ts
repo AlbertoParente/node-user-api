@@ -16,10 +16,10 @@ router.get('/', (request: Request, response: Response) => {
     return response.json({ message: 'Test...' })
 });
 
-router.post('/users', createUserController.handle);
-router.get('/users', getAllUserController.handle);
-router.patch('/user', updateUserController.handle);
-router.delete('/user/:id', deleteUserController.handle);
-router.get('/user', getUserController.handle);
+router.post('/v1/users', createUserController.handle);
+router.get('/v1/users', getAllUserController.handle);
+router.patch('/v1/user', updateUserController.handle);
+router.delete('/v1/user/:id', deleteUserController.handle);
+router.get('/v1/user', getUserController.handle);
 
 export { router }
