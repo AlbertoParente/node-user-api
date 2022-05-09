@@ -9,6 +9,8 @@ interface IdUser {
 };
 
 class CreateUsersService {
+
+    /* Methodo de criação de usuario */
     async execute({ id, name, surname, contractedCovid, email }: IdUser) {
         const user = await getRepository(User)
             .createQueryBuilder("user")
