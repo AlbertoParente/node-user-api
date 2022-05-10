@@ -4,8 +4,8 @@ import { GetUserService } from '../services/GetUserService';
 class GetUserController {
     async handle(request: Request, response: Response) {
         const getUserService = new GetUserService();
-        const { id , name, surname, contractedCovid, email } = request.body;
-        await getUserService.executeSearchId({ id});
+        const { id, name, surname, contractedCovid, email } = request.body;
+        await getUserService.executeSearchId({ id });
         await getUserService.executeSearchName({ name });
         await getUserService.executeSearchSurname({ surname });
         await getUserService.executeSearchContractedCovid({ contractedCovid });

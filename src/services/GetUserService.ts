@@ -1,14 +1,6 @@
 import { getRepository } from 'typeorm';
 import { User } from '../entities/User';
 
-// interface IUser {
-//     id: string;
-//     name: string;
-//     surname: string;
-//     contractedCovid: string;
-//     email: string;
-// };
-
 interface IUserId {
     id: string;
 };
