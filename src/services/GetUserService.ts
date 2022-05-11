@@ -1,6 +1,15 @@
 import { getRepository } from 'typeorm';
 import { User } from '../entities/User';
 
+interface IUser {
+    id: string;
+    name: string;
+    surname: string;
+    contractedCovid: string;
+    email: string;
+};
+
+
 interface IUserId {
     id: string;
 };
@@ -77,6 +86,17 @@ class GetUserService {
             .createQueryBuilder()
             .select()
             .where("email = :email", { email })
+            .execute();
+
+        console.log(user);
+        return user;
+    };
+
+    async executeSearchFilter({ id, name, surname, contractedCovid, email }: IUser) {
+        const user = await getRepository(User)
+            .createQueryBuilder()
+            .select()
+            .where("", {})
             .execute();
 
         console.log(user);
