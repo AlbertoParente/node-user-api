@@ -15,4 +15,4 @@ class GetAllUserService {
     };
 };
 
-export { GetAllUserService }
+export { GetAllUserService };

@@ -22,11 +22,11 @@ class UpdateUserService {
                 email: email
             })
             .where('id = :id', { id })
-            .execute()
+            .execute();
 
         console.log(user.raw);
         return user.raw;
-    }
+    };
 };
 
 export { UpdateUserService };

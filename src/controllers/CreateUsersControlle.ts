@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { CreateUsersService } from '../services/CreateUsersService'
 import { v4 as uuid } from 'uuid';
+import { CreateUsersService } from '../services/CreateUsersService';
 
 class CreateUsersController {
     async handle(request: Request, response: Response) {
@@ -19,7 +19,7 @@ class CreateUsersController {
         const user = await createUserService.execute({ id, name, surname, contractedCovid, email });
 
         return response.status(201).json(user);
-    }
-}
+    };
+};
 
-export { CreateUsersController }
+export { CreateUsersController };

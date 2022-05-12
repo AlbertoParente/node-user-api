@@ -1,7 +1,7 @@
 import { getConnection } from 'typeorm';
-import { CreateUsersService } from './CreateUsersService';
 import { v4 as uuid } from 'uuid';
 import createConnection from '../database';
+import { CreateUsersService } from './CreateUsersService';
 
 describe('CreateUserController', () => {
     beforeAll(async () => {

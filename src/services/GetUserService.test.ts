@@ -1,6 +1,6 @@
 import { getConnection } from 'typeorm';
 import createConnection from '../database';
-import { GetUserService } from './GetUserService'
+import { GetUserService } from './GetUserService';
 import { FakeData } from '../utils/FakeData';
 
 describe('GetAllUserService', () => {

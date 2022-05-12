@@ -1,7 +1,7 @@
+import { getConnection } from 'typeorm';
+import createConnection from '../database';
 import { UpdateUserService } from './UpdateUserServices';
 import { FakeData } from '../utils/FakeData';
-import createConnection from '../database';
-import { getConnection } from 'typeorm';
 
 describe('UpdateUserService', () => {
     beforeAll(async () => {

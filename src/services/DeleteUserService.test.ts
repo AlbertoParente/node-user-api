@@ -1,7 +1,7 @@
-import createConnection from '../database';
 import { getConnection } from 'typeorm';
-import { FakeData } from '../utils/FakeData';
+import createConnection from '../database';
 import { DeleteUserService } from './DeleteUserService'
+import { FakeData } from '../utils/FakeData';
 
 describe('DeleteUserService', () => {
     beforeAll(async () => {

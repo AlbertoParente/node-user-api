@@ -1,5 +1,5 @@
-import { CreateUsersService } from '../services/CreateUsersService';
 import { v4 as uuid } from 'uuid';
+import { CreateUsersService } from '../services/CreateUsersService';
 
 class FakeData {
     createUserService = new CreateUsersService();
@@ -40,7 +40,7 @@ class FakeData {
         });
 
         return user;
-    }
+    };
 };
 
 export { FakeData };

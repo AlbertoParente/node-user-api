@@ -1,9 +1,9 @@
 import { Request } from 'express';
+import { getConnection } from 'typeorm';
+import createConnection from '../database';
+import { GetUserController } from './GetUserController';
 import { makeMockResponse } from '../utils/mocks/mockResponse';
 import { FakeData } from '../utils/FakeData';
-import createConnection from '../database';
-import { getConnection } from 'typeorm';
-import { GetUserController } from './GetUserController';
 
 describe('UpdateUserController', () => {
     beforeAll(async () => {

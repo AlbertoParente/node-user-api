@@ -1,8 +1,8 @@
-import { CreateUsersController } from './CreateUsersControlle';
 import { Request } from 'express';
-import { makeMockResponse } from '../utils/mocks/mockResponse';
-import createConnection from '../database'
 import { getConnection } from 'typeorm';
+import createConnection from '../database';
+import { CreateUsersController } from './CreateUsersControlle';
+import { makeMockResponse } from '../utils/mocks/mockResponse';
 
 describe('CreateUserController', () => {
     beforeAll(async () => {

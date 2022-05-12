@@ -26,7 +26,7 @@ class CreateUsersService {
                 }
             ])
             .execute();
-        return user.identifiers[0]
+        return user.identifiers[0];
     };
 };
 

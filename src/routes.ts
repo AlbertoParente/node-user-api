@@ -14,7 +14,7 @@ const getUserController = new GetUserController();
 
 /* Rota raiz da API */
 router.get('/', (request: Request, response: Response) => {
-    return response.json({ message: 'Test...' })
+    return response.json({ message: 'Test...' });
 });
 
 /* Rota de busca de todos os usuarios */
@@ -32,4 +32,4 @@ router.delete('/user/:id', deleteUserController.handle);
 /* Rota de busca de usuarios por id, nome, sobrenome, contraído covid e email*/
 router.get('/user', getUserController.handle);
 
-export { router }
+export { router };

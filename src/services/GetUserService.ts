@@ -104,4 +104,4 @@ class GetUserService {
     };
 };
 
-export { GetUserService }
+export { GetUserService };

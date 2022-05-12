@@ -1,9 +1,9 @@
+import { getConnection } from 'typeorm';
+import createConnection from '../database';
+import { DeleteUserController } from './DeleteUserController';
 import { makeMockResponse } from '../utils/mocks/mockResponse';
 import { FakeData } from '../utils/FakeData';
-import createConnection from '../database';
-import { getConnection } from 'typeorm';
 import { makeMockRequest } from '../utils/mocks/mockRequest';
-import { DeleteUserController } from './DeleteUserController';
 
 describe('DeleteUserController', () => {
     beforeAll(async () => {
@@ -30,6 +30,6 @@ describe('DeleteUserController', () => {
 
         await deleteUserController.handle(request, response);
 
-        expect(response.state.status).toBe(204)
+        expect(response.state.status).toBe(204);
     });
 });

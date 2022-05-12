@@ -1,6 +1,6 @@
 import { getConnection } from 'typeorm';
-import { GetAllUserController } from './GetAllUserController';
 import createConnection from '../database';
+import { GetAllUserController } from './GetAllUserController';
 import { FakeData } from '../utils/FakeData';
 import { makeMockRequest } from '../utils/mocks/mockRequest';
 import { makeMockResponse } from '../utils/mocks/mockResponse';

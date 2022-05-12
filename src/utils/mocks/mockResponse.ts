@@ -20,7 +20,7 @@ export function makeMockResponse<TResult>() {
     response.json = (json: TResult) => {
         response.state.json = json;
         return response;
-    }
+    };
 
     return response;
 };
