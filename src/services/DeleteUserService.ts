@@ -16,7 +16,6 @@ class DeleteUserService {
             .where('id = :id', { id })
             .execute();
 
-        console.log(user);
         return user.raw;
     };
 };

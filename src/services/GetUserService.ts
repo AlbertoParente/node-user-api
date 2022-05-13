@@ -99,7 +99,6 @@ class GetUserService {
             .where("", {})
             .execute();
 
-        console.log(user);
         return user;
     };
 };
