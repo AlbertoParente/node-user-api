@@ -10,7 +10,7 @@ class GetUserController {
         await getUserService.executeSearchSurname({ surname });
         await getUserService.executeSearchContractedCovid({ contractedCovid });
         await getUserService.executeSearchEmail({ email });
-        await getUserService.executeSearchFilter({ id, name, surname, contractedCovid, email });
+        await getUserService.executeSearchNameOrSurname({ name, surname });
         return response.status(200).json();
     };
 };

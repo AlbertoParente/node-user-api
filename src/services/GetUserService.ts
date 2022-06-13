@@ -2,13 +2,9 @@ import { getRepository } from 'typeorm';
 import { User } from '../entities/User';
 
 interface IUser {
-    id: string;
     name: string;
     surname: string;
-    contractedCovid: string;
-    email: string;
 };
-
 
 interface IUserId {
     id: string;
@@ -46,6 +42,8 @@ class GetUserService {
 
     /* Methodo de busca de usuario por nome */
     async executeSearchName({ name }: IUserName) {
+        console.warn("`GetUserService.executeSearchName` esta obsoleto. Use GetUserService.executeSearchNameOrSurname")
+
         const user = await getRepository(User)
             .createQueryBuilder()
             .select()
@@ -58,6 +56,8 @@ class GetUserService {
 
     /* Methodo de busca de usuario por sobrenome */
     async executeSearchSurname({ surname }: IUserSurname) {
+        console.warn("`GetUserService.executeSearchSurname` esta absoleto. Use GetUserService.executeSearchNameOrSurname")
+
         const user = await getRepository(User)
             .createQueryBuilder()
             .select()
@@ -65,6 +65,18 @@ class GetUserService {
             .execute();
 
         console.log(user);
+        return user;
+    };
+
+    /* Methodo de busca de usuario por nome ou sobrenome */
+    async executeSearchNameOrSurname({ name, surname }: IUser) {
+        const user = await getRepository(User)
+            .createQueryBuilder()
+            .select()
+            .where("name = :name", { name })
+            .orWhere("surname = :surname", {surname})
+            .execute();
+
         return user;
     };
 
@@ -89,16 +101,6 @@ class GetUserService {
             .execute();
 
         console.log(user);
-        return user;
-    };
-
-    async executeSearchFilter({ id, name, surname, contractedCovid, email }: IUser) {
-        const user = await getRepository(User)
-            .createQueryBuilder()
-            .select()
-            .where("", {})
-            .execute();
-
         return user;
     };
 };
